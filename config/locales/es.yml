@@ -1,0 +1,33 @@
+---
+es:
+  activerecord:
+    models:
+      location: Área de trabajo
+      worker: Empleado
+    attributes:
+      location:
+        name: Nombre del área
+      worker:
+        name: Nombre del empleado
+        year_game: Año del juego
+    errors:
+      messages:
+        record_invalid: 'La validación falló: %{errors}'
+      models:
+        worker:
+          attributes:
+            name:
+              too_short: El nombre debe contener mínimo 4 carácteres
+              too_long: El nombre debe contener máximo 30 carácteres
+              blank: El nombre es obligatorio
+              invalid: El nombre contiene carácteres inválidos o inseguros
+            year_game:
+              invalid_date: El año debe ser un año entre 2022 y 2031
+              blank: El nombre es obligatorio
+        location:
+          attributes:
+            name:
+              too_short: El nombre debe contener mínimo 4 carácteres
+              too_long: El nombre debe contener máximo 30 carácteres
+              blank: El nombre es obligatorio
+              invalid: El nombre contiene carácteres inválidos o inseguros
