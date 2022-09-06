@@ -4,12 +4,15 @@ es:
     models:
       location: Área de trabajo
       worker: Empleado
+      game: Amigo secreto
     attributes:
       location:
         name: Nombre del área
       worker:
         name: Nombre del empleado
         year_game: Año del juego
+      game:
+        worker: Empleado
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'
@@ -24,6 +27,8 @@ es:
             year_game:
               invalid_date: El año debe ser un año entre 2022 y 2031
               blank: El nombre es obligatorio
+              too_short: El año debe tener 4 carácteres
+              invalid: El año no es válido
         location:
           attributes:
             name:
@@ -31,3 +36,11 @@ es:
               too_long: El nombre debe contener máximo 30 carácteres
               blank: El nombre es obligatorio
               invalid: El nombre contiene carácteres inválidos o inseguros
+        game:
+          attributes:
+            year_game:
+              wrong_length: El año debe tener 4 carácteres
+              invalid_date: El año debe ser un año entre 2022 y 2031
+              invalid: El nombre contiene carácteres inválidos o inseguros
+            worker:
+              year_taken: El empleado ya está jugando
