@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'games#index', via: :all
+
+  resources :workers, only: %i[create index]
+  resources :locations, only: %i[create index]
+  resources :games, only: %i[create index show]
 end
