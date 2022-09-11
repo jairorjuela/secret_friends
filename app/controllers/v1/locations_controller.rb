@@ -1,7 +1,10 @@
 module V1
   class LocationsController < ApplicationController
     include ExceptionsResponse
+
     def index
+      all_locations = Locations::GetAll::Execute::RUN_ALL.new.call()
+      render_actions(all_locations, :index)
     end
 
     def create

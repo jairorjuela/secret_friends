@@ -3,6 +3,8 @@ module V1
     include ExceptionsResponse
 
     def index
+      all_workers = Workers::GetAll::Execute::RUN_ALL.new.call()
+      render_actions(all_workers, :index)
     end
 
     def create
