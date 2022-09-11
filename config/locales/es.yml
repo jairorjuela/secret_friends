@@ -11,6 +11,7 @@ es:
       worker:
         name: Nombre del empleado
         year_game: Año del juego
+        location_id: Id del Área
       game:
         worker: Empleado
     errors:
@@ -29,6 +30,9 @@ es:
               blank: El nombre es obligatorio
               too_short: El año debe tener 4 carácteres
               invalid: El año no es válido
+            location:
+              required: Se debe agregar un área para el empleado
+            invalid_quantity: Debe existir mínimo dos jugadores
         location:
           attributes:
             name:
@@ -43,7 +47,23 @@ es:
               invalid_date: El año debe ser un año entre 2022 y 2031
               invalid: El nombre contiene carácteres inválidos o inseguros
               same_couple: Deben pasar 2 años para volver a ser pareja
+              year_taken: El año ya está en uso
             worker:
               year_taken: El empleado ya está jugando
             read_only?:
               game_changed: No se pueden actualizar los juegos
+  error_messages:
+    unprocessable_entity:
+      invalid:
+        message: "%{name} es inválido."
+        code: '0101'
+        object: "%{entity}"
+    not_found:
+      entity:
+        message: "%{name} no existe"
+        code: '0001'
+        object: "%{entity}"
+      dry_validation:
+        message: "No se envió la llave %{name}"
+        code: '0005'
+        object: "%{entity}"
