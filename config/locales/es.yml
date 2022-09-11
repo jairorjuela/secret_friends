@@ -42,5 +42,8 @@ es:
               wrong_length: El año debe tener 4 carácteres
               invalid_date: El año debe ser un año entre 2022 y 2031
               invalid: El nombre contiene carácteres inválidos o inseguros
+              same_couple: Deben pasar 2 años para volver a ser pareja
             worker:
               year_taken: El empleado ya está jugando
+            read_only?:
+              game_changed: No se pueden actualizar los juegos

@@ -1,20 +1,27 @@
 class Worker < ApplicationRecord
   include StringValidations
+  include CommonValidates
 
   belongs_to :location
   has_many :games
 
-  validates :name, :year_game, presence: true, length: { in: 4..30 }
+  validates :name, presence: true, length: { in: 4..30 }
   validates :name, format: { with: proc { |w| w.regex_valid_name }, multiline: true }, if: :will_save_change_to_name?
   validates :name, format: { without: proc { |w| w.regex_insecure_string } }, if: :will_save_change_to_name?
 
-  validate :valid_year?
+  before_create :assign_year
 
   scope :order_by_name, -> { order('workers.name') }
 
-  def valid_year?
-    return if (2022...2032).to_a.include?(year_game.to_i)
+  def couple_games
+    games.map(&:couple_number)
+  end
 
-    self.errors.add(:year_game, :invalid_date)
+  def played_games
+    games.map(&:year_game).map(&:to_i)
+  end
+
+  def assign_year
+    self.year_game = Date.current.year
   end
 end
