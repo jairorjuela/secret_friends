@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Games::GetAll::BuildResponse
   include Dry::Transaction::Operation
 

@@ -3,7 +3,7 @@ module V1
     include ExceptionsResponse
 
     def index
-      all_games = get_all_game Games::GetAll::Execute::RUN_ALL.new.call()
+      all_games = Games::GetAll::Execute::RUN_ALL.new.call()
       render_actions(all_games, :index)
     end
 

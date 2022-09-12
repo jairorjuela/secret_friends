@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Games::GetAll::BuildAttributes
   include Dry::Transaction::Operation
 

@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Games::Create::ValidateYear
   include Dry::Transaction::Operation
   include Common::Operations::DryErrors

@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Workers::Create::Create
   include Dry::Transaction::Operation
   include Common::Operations::DryErrors

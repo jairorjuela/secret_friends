@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Games::GetAll::ValidatePresence
   include Dry::Transaction::Operation
   include Common::Operations::DryErrors

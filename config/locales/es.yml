@@ -48,6 +48,7 @@ es:
               invalid: El nombre contiene carácteres inválidos o inseguros
               same_couple: Deben pasar 2 años para volver a ser pareja
               year_taken: El año ya está en uso
+              empty_game: No existen juegos con ese año
             worker:
               year_taken: El empleado ya está jugando
             read_only?:

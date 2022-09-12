@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Games::Create::FilterWorkers
   include Dry::Transaction::Operation
   include Common::Operations::DryErrors

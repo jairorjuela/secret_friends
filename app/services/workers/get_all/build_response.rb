@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Workers::GetAll::BuildResponse
   include Dry::Transaction::Operation
 

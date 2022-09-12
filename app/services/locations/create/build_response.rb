@@ -1,3 +1,5 @@
+require 'dry/transaction/operation'
+
 class Locations::Create::BuildResponse
   include Dry::Transaction::Operation
 
