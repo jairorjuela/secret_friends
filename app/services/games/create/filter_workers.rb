@@ -7,7 +7,7 @@ class Games::Create::FilterWorkers
   def call(input)
     get_workers = get_worker_to_play
 
-    if get_workers.klass.eql?(Worker)
+    if get_workers&.klass.eql?(Worker)
       response = final_response(get_workers)
 
       Success input.merge!(response)

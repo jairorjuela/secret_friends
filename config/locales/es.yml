@@ -40,6 +40,7 @@ es:
               too_long: El nombre debe contener máximo 30 carácteres
               blank: El nombre es obligatorio
               invalid: El nombre contiene carácteres inválidos o inseguros
+              taken: El nombre ya existe
         game:
           attributes:
             year_game:
